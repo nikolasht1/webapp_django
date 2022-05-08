@@ -31,3 +31,5 @@ ALLOWED_HOSTS=['*',]
 DEBUG=False
 
 Run the; docker compose up
+
+https://docs.docker.com/samples/django/
