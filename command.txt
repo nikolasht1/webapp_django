@@ -1,0 +1,33 @@
+sudo docker-compose run web django-admin startproject composeexample .
+
+cpy in to; composeexample/settings.py
+
+# settings.py
+   
+import os
+   
+[...]
+   
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.environ.get('POSTGRES_NAME'),
+        'USER': os.environ.get('POSTGRES_USER'),
+        'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
+        'HOST': 'db',
+        'PORT': 5432,
+    }
+}
+
+
+change value;
+
+ALLOWED_HOSTS=['<your host ip address>',]
+
+or
+
+ALLOWED_HOSTS=['*',]
+
+DEBUG=False
+
+Run the; docker compose up
